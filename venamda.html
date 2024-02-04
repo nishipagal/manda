@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Interactive Quiz</title>
+ <style>
+ body 
+{
+ font-family: 'Arial', sans-serif;
+ background-color: #d5e40e;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 100vh;
+ }
+ form 
+{
+ background-color: #12beee;
+ padding: 20px;
+ box-shadow: 0 0 10px rgba(70, 11, 232, 0.1);
+ border-radius: 8px;
+ }
+Ex. No: 3
+INTERACTIVE QUIZ USING HTML, CSS, JAVASCRIPT
+ label 
+{
+ display: block;
+ margin-bottom: 12px;
+ }
+ input
+{
+ margin-bottom: 12px;
+ }
+ button 
+{
+ background-color: #eb0f0f;
+ color: #1dea0a;
+ padding: 10px 20px;
+ border: none;
+ cursor: pointer;
+ }
+ button:hover 
+{
+ background-color: #130564;
+ }
+ .result
+{
+ margin-top: 20px;
+ font-weight: bold;
+ }
+ </style>
+</head>
+<body>
+ <form id="quizForm">
+ <label>1. What is the capital of France?</label>
+ <input type="radio" name="q1" value="paris"> Paris
+ <input type="radio" name="q1" value="london"> London
+ <input type="radio" name="q1" value="berlin"> Berlin
+ <label>2. What is the largest planet in our solar system?</label>
+ <input type="radio" name="q2" value="earth"> Earth
+ <input type="radio" name="q2" value="mars"> Mars
+ <input type="radio" name="q2" value="jupiter"> Jupiter
+ <label>3. Who wrote "Romeo and Juliet"?</label>
+ <input type="radio" name="q3" value="shakespeare"> William Shakespeare
+ <input type="radio" name="q3" value="tolstoy"> Leo Tolstoy
+ <input type="radio" name="q3" value="dickens"> Charles Dickens
+ <button type="button" onclick="calculateScore()">Submit</button>
+ <div class="result" id="resultMessage"></div>
+ </form>
+ <script>
+ function calculateScore() 
+{
+ var score = 0;
+ var q1Answer = document.querySelector('input[name="q1"]:checked');
+ if (q1Answer && q1Answer.value === 'paris')
+{
+ score++;
+ }
+ var q2Answer = document.querySelector('input[name="q2"]:checked');
+ if (q2Answer && q2Answer.value === 'jupiter') 
+{
+ score++;
+ }
+ var q3Answer = document.querySelector('input[name="q3"]:checked');
+ if (q3Answer && q3Answer.value === 'shakespeare') 
+{
+ score++;
+ }
+ displayResult(score);
+ }
+ function displayResult(score) 
+{
+ var resultMessage = document.getElementById('resultMessage');
+ resultMessage.textContent = 'Your score: ' + score + ' out of 3';
+ if (score === 3)
+{
+ resultMessage.style.color = 'green';
+ resultMessage.textContent += ' Excellent!';
+ } 
+else if (score >= 1) 
+{
+ resultMessage.style.color = 'orange';
+ resultMessage.textContent += ' Good job!';
+ } 
+else
+{
+ resultMessage.style.color = 'red';
+ resultMessage.textContent += ' You can do better.';
+ }
+ }
+ </script>
+</body>
+</html>

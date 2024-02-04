@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>
+        Form validation using HTML
+        and JavaScript
+    </title>
+    <style>
+
+        form {
+            margin: 0 auto;
+            width: 600px;
+        }
+
+    </style>
+<script>
+	function validation()
+{
+	let x=document.forms["RegForm"]["Name"].value;
+	if(x=="")
+{
+alert("name must be filled out");
+return false;
+}
+}
+</script>
+</head>
+ 
+<body class="a">
+    <h1  class ="b"style="text-align: center;">
+        REGISTRATION FORM
+    </h1>
+    <form name="RegForm"
+          onsubmit="return validation()">
+        <p class="h">
+            Name:
+            <input type="text" size="65"
+                   name="Name"
+                   placeholder="baaka"/>
+        </p>
+        <br />
+        <p class="g">
+            Address:
+            <input type="text" size="65"
+                   name="Address"
+                   placeholder="Bangalore, Karnataka"/>
+        </p>
+        <br />
+        <p class="f">
+            E-mail Address:
+            <input type="text" size="65"
+                   name="EMail"
+                   placeholder="demo@example.com"/>
+        </p>
+        <br />
+        <p class="e">
+            Password:
+            <input type="password" size="65"
+                   name="Password" />
+        </p>
+        <br />
+        <br />
+        <p class="d">
+            Select Your Course: 
+            <select value="" name="Subject">
+                <option>Select Course</option>
+                <option>BTECH</option>
+                <option>BBA</option>
+                <option>BCA</option>
+                <option>ECE</option>
+            </select>
+        </p>
+        <br />
+        <br />
+        <p class="c">
+            Comments:
+            <textarea  cols="55" name="Comment"> </textarea>
+        </p>
+        <p>
+            <input type="submit" value="Send"
+                   name="Submit" />
+            <input type="reset" value="Reset"
+                   name="Reset" />
+        </p>
+    </form>
+</body>
+ 
+</html>
